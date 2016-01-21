@@ -70,3 +70,7 @@ This shows the aggregate of all environments any part of the story is deployed t
 
 This shows the aggregate of all environments a specific commit is deployed to:
 ![Commit Detail](https://github.com/pivotaltracker/tracker_deployment_chrome_extension/blob/master/commit_detail.png "Commit Detail")
+
+## Troubleshooting
+ 
+The commits.json file is retrieved with an XmlHttpRequest, which means it needs CORS headers. The origin header is `chrome-extension://mignagjgmijdedgadjclbmcajbndidkgJ`. If you watch the network requests (in chrome dev tools for instance) and the request for commits.json is blocked or has no content, it likely needs CORS headers from your server.
